@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace furever_home.Models
+namespace furever_home.Models.Input
 {
-    public class User
+    public class UserInput
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = String.Empty;
