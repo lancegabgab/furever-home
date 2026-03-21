@@ -33,17 +33,17 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container-fluid text-white p-3 text-center" style="background-color:#FF6B6B">
-            <a asp-area="" asp-controller="Home" asp-action="">About</a> |
-            <a asp-area="" asp-controller="Home" asp-action="">Contact</a> |
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container-fluid p-3 text-center" style="background-color:#FF6B6B">
+            <a class="text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="">About</a> |
+            <a class="text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="">Contact</a> |
+            <a class="text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
