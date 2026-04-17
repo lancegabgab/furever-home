@@ -7,4 +7,9 @@
     <RootNamespace>furever_home</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.29.0" />
+    <PackageReference Include="DotNetEnv" Version="3.0.0" />
+  </ItemGroup>
+
 </Project>
