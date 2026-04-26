@@ -55,40 +55,40 @@
     
           <div class="col-12 col-md-6">
             <img src="~/images/FureverHome.png" height="60" alt="Furever Home" class="mb-2">
-            <p class="small" style="color: #5DCAA5;">
+            <p class="small footer-link">
               Connecting animal shelters with loving families across the Philippines.
             </p>
           </div>
     
           <div class="col-6 col-md-3">
-            <h6 class="small fw-medium mb-3" style="color: #9FE1CB;">Platform</h6>
+            <h6 class="small fw-medium mb-3 footer-title">Platform</h6>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Browse shelters</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Browse pets</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none small" style="color: #5DCAA5;">How it works</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Register your shelter</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Browse shelters</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Browse pets</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">How it works</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Register your shelter</a></li>
             </ul>
           </div>
     
           <div class="col-6 col-md-3">
-            <h6 class="small fw-medium mb-3" style="color: #9FE1CB;">Account</h6>
+            <h6 class="small fw-medium mb-3 footer-title">Account</h6>
             <ul class="list-unstyled">
-              <li class="mb-2"><a asp-action="Register" asp-controller="Account" class="text-decoration-none small" style="color: #5DCAA5;">Sign up</a></li>
-              <li class="mb-2"><a asp-action="Login" asp-controller="Account" class="text-decoration-none small" style="color: #5DCAA5;">Log in</a></li>
-              <li class="mb-2"><a asp-action="MyApplications" asp-controller="Adoption" class="text-decoration-none small" style="color: #5DCAA5;">My applications</a></li>
-              <li class="mb-2"><a asp-action="MyAppointments" asp-controller="Appointment" class="text-decoration-none small" style="color: #5DCAA5;">My appointments</a></li>
+              <li class="mb-2"><a asp-action="Register" asp-controller="Account" class="text-decoration-none small footer-link">Sign up</a></li>
+              <li class="mb-2"><a asp-action="Login" asp-controller="Account" class="text-decoration-none small footer-link">Log in</a></li>
+              <li class="mb-2"><a asp-action="MyApplications" asp-controller="Adoption" class="text-decoration-none small footer-link">My applications</a></li>
+              <li class="mb-2"><a asp-action="MyAppointments" asp-controller="Appointment" class="text-decoration-none small footer-link">My appointments</a></li>
             </ul>
           </div>
     
         </div>
     
         <div class="d-flex justify-content-between align-items-center pt-3 flex-wrap gap-2">
-          <p class="small mb-0" style="color: #5DCAA5;">© 2026 Furever Home. All rights reserved.</p>
+          <p class="small mb-0 footer-title">© 2026 Furever Home. All rights reserved.</p>
           <div class="d-flex gap-3">
-            <a asp-controller="Home" asp-action="About" class="text-decoration-none small" style="color: #5DCAA5;">About</a>
-            <a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Contact</a>
-            <a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Privacy</a>
-            <a href="#" class="text-decoration-none small" style="color: #5DCAA5;">Terms</a>
+            <a asp-controller="Home" asp-action="About" class="text-decoration-none small footer-link">About</a>
+            <a href="#" class="text-decoration-none small footer-link">Contact</a>
+            <a href="#" class="text-decoration-none small footer-link">Privacy</a>
+            <a href="#" class="text-decoration-none small footer-link">Terms</a>
           </div>
         </div>
     
@@ -101,3 +101,11 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<style>
+    .footer-title {
+       color: #9FE1CB;
+    }
+    .footer-link {
+       color: #5DCAA5;
+    }
+</style>
