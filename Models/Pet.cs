@@ -16,7 +16,7 @@ namespace FureverHome.Models
         public PetType PetType { get; set; }
       
         [BsonRepresentation(MongoDB.Bson.BsonType.String)]
-        public Gender Gender { get; set; }
+        public PetGender Gender { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
         public required string ShelterId { get; set; }
