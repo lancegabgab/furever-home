@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/furever_home.styles.css" asp-append-version="true" />
+    <style>
+        .navbar .nav-link {
+            color: #5DCAA5;
+        }
+        .navbar .nav-link:hover {
+            color: #ffffff;
+        }
+        .navbar .nav-link.active {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .footer-title {
+           color: #9FE1CB;
+        }
+        .footer-link {
+           color: #5DCAA5;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,19 +42,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Shelters</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Shelters</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Pets</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Pets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Donate</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Donate</a>
                         </li>
                     </ul>
                     <div class="ms-auto d-flex flex-column flex-md-row">
@@ -105,21 +123,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-<style>
-    .navbar .nav-link {
-        color: #5DCAA5;
-    }
-    .navbar .nav-link:hover {
-        color: #ffffff;
-    }
-    .navbar .nav-link.active {
-        color: #ffffff;
-        font-weight: 600;
-    }
-    .footer-title {
-       color: #9FE1CB;
-    }
-    .footer-link {
-       color: #5DCAA5;
-    }
-</style>
