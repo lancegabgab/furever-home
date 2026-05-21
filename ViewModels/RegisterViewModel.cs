@@ -5,7 +5,12 @@ namespace furever_home.ViewModels
     public class RegisterViewModel
     {
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
+        public string? MiddleName { get; set; }
+        
+        [Required]
+        public string LastName { get; set; }
 
         [Required]
         [EmailAddress]
