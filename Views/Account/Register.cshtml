@@ -12,7 +12,7 @@
         <form asp-action="Register" method="post">
 
             <div class="mb-3">
-                <label class="form-label">First Name</label>
+                <label class="form-label">First Name <span class="text-danger">*</span></label>
                 <input asp-for="FirstName" class="form-control" />
             </div>
 
@@ -22,17 +22,17 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Last Name</label>
+                <label class="form-label">Last Name <span class="text-danger">*</span></label>
                 <input asp-for="LastName" class="form-control" />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label">Email <span class="text-danger">*</span></label>
                 <input asp-for="Email" class="form-control" />
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Password</label>
+                <label class="form-label">Password <span class="text-danger">*</span></label>
                 <input asp-for="Password" type="password" class="form-control" />
             </div>
 
