@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Contact Us</h1>
+        <p class="text-muted">
+            Have questions about pet adoption, shelters, donations, or issues with your account? We'd love to hear from you.
+        </p>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-lg-5">
+            <div class="card shadow-sm border-0 p-4 h-100">
+                <h4 class="fw-bold mb-4">Get in Touch</h4>
+
+                <div class="mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted mb-0">
+                        lancegabcruz@gmail.com
+                    </p>
+                </div>
+
+                <div class="mb-3">
+                    <h6>Phone</h6>
+                    <p class="text-muted mb-0">
+                        +63 905659968
+                    </p>
+                </div>
+
+                <div class="mb-3">
+                    <h6>Location</h6>
+                    <p class="text-muted mb-0">
+                        Manila, Philippines
+                    </p>
+                </div>
+
+                <div>
+                    <h6>Support Hours</h6>
+                    <p class="text-muted mb-0">
+                        Available 24/7 for inquiries. Please be patient with responses, as I am also working and may take some time to get back to you.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0 p-4">
+                <h4 class="fw-bold mb-4">Send Us a Message</h4>
+
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                Full Name <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                Email Address <span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Subject <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" placeholder="Enter subject" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            Message <span class="text-danger">*</span>
+                        </label>
+                        <textarea class="form-control" rows="5"
+                                  placeholder="Write your message here..." required>
+                        </textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success px-4"> Submit </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
