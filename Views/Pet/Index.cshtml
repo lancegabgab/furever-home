@@ -7,5 +7,45 @@
         <p class="text-muted text-center">
             Browse available pets waiting for their forever home. Adopt, donate, or learn more about each pet below.
         </p>
+
+        <form method="get" asp-controller="Pets" asp-action="Index" class="mb-4">
+            <div class="row g-2 align-items-end">
+
+                <div class="col-md-3">
+                    <label for="search">Pet Name</label>
+                    <input type="text" name="search" class="form-control" placeholder="Search pets..."
+                           @* value="@Context.Request.Query["search"]"  *@
+                    />
+                </div>
+
+                <div class="col-md-3">
+                    <label for="petType">Pet Type</label>
+                    <select name="petType" class="form-select">
+                        <option value="">All</option>
+                        <option value="">Cat</option>
+                        <option value="">Dog</option>
+                        @* <option value="Cat" selected="@(Context.Request.Query["petType"] == "Cat")">Cat</option>
+                        <option value="Dog" selected="@(Context.Request.Query["petType"] == "Dog")">Dog</option> *@
+
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="petGender">Pet Gender</label>
+                    <select name="petGender" class="form-select">
+                        <option value="">Any</option>
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100">
+                        Search
+                    </button>
+                </div>
+
+            </div>
+        </form>
     </div>
 </div>
