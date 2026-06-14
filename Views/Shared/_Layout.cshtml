@@ -80,7 +80,7 @@
                             <a class="nav-link" asp-area="" asp-controller="Shelter" asp-action="Index">Shelters</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Pets</a>
+                            <a class="nav-link" asp-area="" asp-controller="Pet" asp-action="Index">Pets</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Donate">Donate</a>
@@ -114,8 +114,8 @@
           <div class="col-6 col-md-3">
             <h6 class="small fw-medium mb-3 footer-title">Platform</h6>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Browse shelters</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Browse pets</a></li>
+              <li class="mb-2"><a asp-action="Index" asp-controller="Shelter" class="text-decoration-none small footer-link">Browse shelters</a></li>
+              <li class="mb-2"><a asp-action="Index" asp-controller="Pet" class="text-decoration-none small footer-link">Browse pets</a></li>
               <li class="mb-2"><a class="text-decoration-none small footer-link" asp-controller="Home" asp-action="Index" asp-fragment="how-it-works">How it works</a></li>
               <li class="mb-2"><a href="#" class="text-decoration-none small footer-link">Register your shelter</a></li>
             </ul>
