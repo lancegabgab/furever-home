@@ -1,13 +1,15 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FureverHome.Models
 {
     public class Shelter
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; } = null!;
     }
 }
