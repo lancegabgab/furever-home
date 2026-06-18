@@ -4,3 +4,7 @@
 *.suo
 *.cache
 *.log
+
+# Build outputs
+bin/
+obj/
