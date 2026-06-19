@@ -1,5 +1,6 @@
 using DotNetEnv;
 using furever_home.Data;
+using FureverHome.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<FureverHomeContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+builder.Services.AddScoped<ShelterService>();
 
 var app = builder.Build();
 

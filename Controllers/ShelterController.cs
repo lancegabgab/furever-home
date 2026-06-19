@@ -1,20 +1,30 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using FureverHome.Services;
 
 namespace furever_home.Controllers
 {
     public class ShelterController : Controller
     {
+        private readonly ShelterService _shelterService;
+
+        public ShelterController(ShelterService shelterService)
+        {
+            _shelterService = shelterService;
+        }
+
         // GET: ShelterController
         public ActionResult Index()
         {
-            return View();
+            var shelters = _shelterService.GetAll();
+            return View(shelters);
         }
 
         // GET: ShelterController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var shelter = _shelterService.GetById(id);
+            return View(shelter);
         }
 
         // GET: ShelterController/Create
