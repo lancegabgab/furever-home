@@ -8,4 +8,57 @@
             Find answers to common questions about pet adoption and our system.
         </p>
     </div>
+
+    <div class="accordion" id="mainAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent1">
+                    Adoption Questions
+                </button>
+            </h2>
+            <div id="parent1" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    <div class="accordion" id="nestedAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#child1">
+                                    How do I adopt?
+                                </button>
+                            </h2>
+                            <div id="child1" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Browse available pets, choose your preferred pet,
+                                    and submit an adoption request through the system.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent2">
+                    Account Questions
+                </button>
+            </h2>
+            <div id="parent2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent3">
+                    Donation Questions
+                </button>
+            </h2>
+            <div id="parent3" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
