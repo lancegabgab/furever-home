@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace furever_home.ViewModels
+namespace FureverHome.ViewModels
 {
     public class RegisterViewModel
     {

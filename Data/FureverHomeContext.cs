@@ -1,7 +1,7 @@
 ﻿using FureverHome.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace furever_home.Data
+namespace FureverHome.Data
 {
     public class FureverHomeContext : DbContext
     {

@@ -1,5 +1,5 @@
 using DotNetEnv;
-using furever_home.Data;
+using FureverHome.Data;
 using FureverHome.Services;
 using Microsoft.EntityFrameworkCore;
 

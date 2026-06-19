@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
 
-namespace furever_home.Controllers
+namespace FureverHome.Controllers
 {
     public class ShelterController : Controller
     {

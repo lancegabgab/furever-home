@@ -1,4 +1,4 @@
-﻿using furever_home.Data;
+﻿using FureverHome.Data;
 using FureverHome.Models;
 
 namespace FureverHome.Services

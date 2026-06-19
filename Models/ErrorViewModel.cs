@@ -1,4 +1,4 @@
-namespace furever_home.Models
+namespace FureverHome.Models
 {
     public class ErrorViewModel
     {

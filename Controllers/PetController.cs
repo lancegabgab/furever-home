@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace furever_home.Controllers
+namespace FureverHome.Controllers
 {
     public class PetController : Controller
     {

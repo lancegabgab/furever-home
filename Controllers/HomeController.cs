@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using furever_home.Models;
+using FureverHome.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace furever_home.Controllers
+namespace FureverHome.Controllers
 {
     public class HomeController : Controller
     {
