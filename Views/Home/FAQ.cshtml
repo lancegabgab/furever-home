@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "FAQ";
 }
+<style>
+    .custom-accordion .accordion-button {
+        background-color: #ACD1AF;
+        color: #2f3e34;
+        box-shadow: none;
+    }
+</style>
 <div class="container py-5">
     <div class="text-center mb-5">
         <h1 class="fw-bold">Frequently Asked Questions</h1>
@@ -9,7 +16,7 @@
         </p>
     </div>
 
-    <div class="accordion" id="mainAccordion">
+    <div class="accordion custom-accordion" id="mainAccordion">
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent1">
