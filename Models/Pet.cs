@@ -11,9 +11,7 @@ namespace FureverHome.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; } = null!;
-
-        [Required]
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; }
 
         [Required]
         public PetType PetType { get; set; }
