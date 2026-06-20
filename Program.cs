@@ -16,6 +16,7 @@ builder.Services.AddDbContext<FureverHomeContext>(options =>
     ));
 
 builder.Services.AddScoped<ShelterService>();
+builder.Services.AddScoped<PetService>();
 
 var app = builder.Build();
 

@@ -1,20 +1,29 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using FureverHome.Services;
 
 namespace FureverHome.Controllers
 {
     public class PetController : Controller
     {
+        private readonly PetService _petService;
+
+        public PetController(PetService petService)
+        {
+            _petService = petService;
+        }
         // GET: PetController
         public ActionResult Index()
         {
-            return View();
+            var pets = _petService.GetAll();
+            return View(pets);
         }
 
         // GET: PetController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var pet = _petService.GetById(id);
+            return View(pet);
         }
 
         // GET: PetController/Create
