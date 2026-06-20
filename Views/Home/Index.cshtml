@@ -1,7 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/adopted.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 80vh;
+    }
+</style>
 <div class="hero-section d-flex align-items-center text-white">
     <div class="container">
         <div class="row justify-content-center">
@@ -98,14 +106,4 @@
     </div>
 </div>
 
-<style>
-    .hero-section {
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                    url('/images/shelterdog.jpg'); 
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    
-        min-height: 80vh;   
-}
-</style>
+
