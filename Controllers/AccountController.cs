@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using FureverHome.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FureverHome.Controllers
@@ -11,11 +12,13 @@ namespace FureverHome.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
