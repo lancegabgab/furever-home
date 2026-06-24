@@ -16,7 +16,7 @@ namespace FureverHome.Controllers
         // GET: ShelterController
         public ActionResult Index()
         {
-            var shelters = _shelterService.GetAll();
+            var shelters = _shelterService.GetAll() ?? new List<Shelter>();
             return View(shelters);
         }
 
