@@ -14,7 +14,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<FureverHomeContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
+        Environment.GetEnvironmentVariable("DB_CONNECTION")
+        // builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
