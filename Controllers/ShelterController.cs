@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
+using FureverHome.Models;
 
 namespace FureverHome.Controllers
 {
