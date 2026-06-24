@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
 using FureverHome.Models;
@@ -14,14 +15,14 @@ namespace FureverHome.Controllers
             _shelterService = shelterService;
         }
 
-        // GET: ShelterController
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var shelters = _shelterService.GetAll() ?? new List<Shelter>();
             return View(shelters);
         }
 
-        // GET: ShelterController/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var shelter = _shelterService.GetById(id);
