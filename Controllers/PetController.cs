@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
 
@@ -12,14 +13,15 @@ namespace FureverHome.Controllers
         {
             _petService = petService;
         }
-        // GET: PetController
+
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var pets = _petService.GetAll();
             return View(pets);
         }
 
-        // GET: PetController/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var pet = _petService.GetById(id);
