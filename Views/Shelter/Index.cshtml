@@ -1,4 +1,5 @@
-﻿@{
+@model IEnumerable<FureverHome.Models.Shelter>
+@{
     ViewData["Title"] = "Shelters";
 }
 
@@ -17,5 +18,23 @@
             These shelters actively use the Furever Home platform to manage pet listings, streamline adoption processes, and connect rescued animals with potential adopters.
         </p>
     </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center text-muted mt-4">
+            No shelters available yet.
+        </div>
+    }
+    else
+    {
+        <ul class="list-group">
+            @foreach (var shelter in Model)
+            {
+                <li class="list-group-item">
+                    <div class="fw-bold">@shelter.Name</div>
+                </li>
+            }
+        </ul>
+    }
 
 </div>
