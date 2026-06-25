@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
+using FureverHome.Models;
 
 namespace FureverHome.Controllers
 {
@@ -17,7 +18,7 @@ namespace FureverHome.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var pets = _petService.GetAll();
+            var pets = _petService.GetAll() ?? new List<Pet>();
             return View(pets);
         }
 
