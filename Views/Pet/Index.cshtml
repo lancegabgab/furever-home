@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<FureverHome.Models.Pet>
+@{
     ViewData["Title"] = "Pets";
 }
 <style>
@@ -54,6 +55,32 @@
 
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="container my-5"> 
+        <div class="row g-4"> 
+            @if (Model != null && Model.Any()) {
+                @foreach (var pet in Model) {
+                    <div class="col-md-4"> 
+                        <div class="card h-100 shadow-sm"> 
+                            <div class="d-flex align-items-center justify-content-center bg-secondary text-white" style="height:250px;">
+                                <span>No Image Available</span> 
+                            </div> 
+                            <div class="card-body"> 
+                                <h5 class="card-title">@pet.Name</h5> 
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <a asp-controller="Pet" asp-action="Details" asp-route-id="@pet.Id" class="btn btn-success w-100"> View Details </a> 
+                            </div> 
+                        </div> 
+                    </div>
+                }
+            } else
+            {
+                <div class="col-12 text-center"> 
+                    <h4>No pets found.</h4> 
+                </div>
+            }
         </div>
     </div>
 </div>
