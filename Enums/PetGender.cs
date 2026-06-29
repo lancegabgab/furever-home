@@ -2,6 +2,6 @@ namespace FureverHome.Enums;
 
 public enum PetGender
 {
-    Male,
-    Female
+    Male = 1,
+    Female = 2
 }
