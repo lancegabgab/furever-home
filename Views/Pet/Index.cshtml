@@ -31,8 +31,8 @@
                     <div class="col-md-3">
                         <select name="petType" class="form-select">
                             <option value="" selected>All Pet Type</option>
-                            <option value="">Cat</option>
-                            <option value="">Dog</option>
+                            <option value="1">Dog</option>
+                            <option value="2">Cat</option>
                             @* <option value="Cat" selected="@(Context.Request.Query["petType"] == "Cat")">Cat</option>
                         <option value="Dog" selected="@(Context.Request.Query["petType"] == "Dog")">Dog</option> *@
 
@@ -42,8 +42,8 @@
                     <div class="col-md-3">
                         <select name="petGender" class="form-select" aria-label="Pet Gender">
                             <option value="">All Gender</option>
-                            <option value="">Male</option>
-                            <option value="">Female</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
                         </select>
                     </div>
 
