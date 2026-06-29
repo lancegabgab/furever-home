@@ -2,7 +2,7 @@ namespace FureverHome.Enums;
 
 public enum PetStatus
 {
-    Available,
-    Pending,
-    Adopted
+    Available = 1,
+    Pending = 2,
+    Adopted = 3
 }
