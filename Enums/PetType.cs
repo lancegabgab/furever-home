@@ -2,6 +2,6 @@ namespace FureverHome.Enums;
 
 public enum PetType
 {
-    Dog,
-    Cat
+    Dog = 1,
+    Cat = 2
 }
