@@ -1,5 +1,35 @@
 ﻿@{
     ViewData["Title"] = "FAQ";
+
+    var faqSections = new[]
+    {
+        new
+        {
+            Title = "Adoption Questions",
+            Items = new[]
+            {
+                new { Question = "How do I adopt?", Answer = "Browse available pets, choose your preferred pet, and submit an adoption request through the system." },
+                new { Question = "What are the available options for receiving my adopted pet? ", Answer = "Upon completing the adoption form, you may select either pet pickup or home delivery, depending on availability." }
+            }
+        },
+        new
+        {
+            Title = "Account Questions",
+            Items = new[]
+            {
+                new { Question = "How do I create an account?", Answer = "Click register and fill out the required information." },
+                new { Question = "I forgot my password.", Answer = "Use the forgot password option on the login page." }
+            }
+        },
+        new
+        {
+            Title = "Donation Questions",
+            Items = new[]
+            {
+                new { Question = "Do registered shelters have to donate for platform deployment?", Answer = "Not at all. Donations are voluntary, but greatly appreciated if you’d like to support us." }
+            }
+        }
+    };
 }
 <style>
     .custom-accordion .accordion-button {
@@ -17,55 +47,52 @@
     </div>
 
     <div class="accordion custom-accordion" id="mainAccordion">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent1">
-                    Adoption Questions
-                </button>
-            </h2>
-            <div id="parent1" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                    <div class="accordion" id="nestedAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#child1">
-                                    How do I adopt?
-                                </button>
-                            </h2>
-                            <div id="child1" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Browse available pets, choose your preferred pet,
-                                    and submit an adoption request through the system.
+        @for (int i = 0; i < faqSections.Length; i++)
+        {
+            var section = faqSections[i];
+    
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button @(i != 0 ? "collapsed" : "")"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#parent@(i)">
+                        @section.Title
+                    </button>
+                </h2>
+    
+                <div id="parent@(i)"
+                     class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+                     data-bs-parent="#mainAccordion">
+    
+                    <div class="accordion-body">
+                        <div class="accordion" id="nestedAccordion@(i)">
+                            @for (int j = 0; j < section.Items.Length; j++)
+                            {
+                                var item = section.Items[j];
+    
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#child@(i)_@(j)">
+                                            @item.Question
+                                        </button>
+                                    </h2>
+    
+                                    <div id="child@(i)_@(j)"
+                                         class="accordion-collapse collapse"
+                                         data-bs-parent="#nestedAccordion@(i)">
+                                        <div class="accordion-body">
+                                            @item.Answer
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                     </div>
+    
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent2">
-                    Account Questions
-                </button>
-            </h2>
-            <div id="parent2" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#parent3">
-                    Donation Questions
-                </button>
-            </h2>
-            <div id="parent3" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
