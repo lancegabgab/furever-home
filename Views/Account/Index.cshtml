@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h2 class="mb-4">My Profile</h2>
+        <hr />
+
+        <div class="mb-3">
+            <p><strong>Name:</strong> </p>
+            <p><strong>Role:</strong> </p>
+        </div>
+
+        <div class="d-flex gap-2">
+            <a asp-controller="Shelter" asp-action="Create" class="btn btn-primary">
+                Register a Shelter
+            </a>
+
+            <a asp-controller="Shelter" asp-action="Join" class="btn btn-outline-primary">
+                Join a Shelter
+            </a>
+        </div>
+    </div>
+</div>
