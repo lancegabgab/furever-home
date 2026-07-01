@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FureverHome.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         public IActionResult Index()
