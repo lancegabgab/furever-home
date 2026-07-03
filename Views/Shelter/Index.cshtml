@@ -27,14 +27,16 @@
     }
     else
     {
-        <ul class="list-group">
+        <div class="row g-4">
             @foreach (var shelter in Model)
             {
-                <li class="list-group-item">
-                    <div class="fw-bold">@shelter.Name</div>
-                </li>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-4 text-center">
+                        <h5 class="fw-bold mb-0">@shelter.Name</h5>
+                    </div>
+                </div>
             }
-        </ul>
+        </div>
     }
 
 </div>
