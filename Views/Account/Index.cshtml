@@ -35,15 +35,19 @@
             <p><strong>Name:</strong> </p>
             <p><strong>Role:</strong> </p>
         </div>
-
-        <div class="d-flex gap-2">
-            <a asp-controller="Shelter" asp-action="Create" class="btn btn-register-shelter">
-                Register a Shelter
-            </a>
-
-            <a asp-controller="Shelter" asp-action="Join" class="btn btn-join-shelter">
-                Join a Shelter
-            </a>
+        <div class="mt-4">
+            <p class="text-muted">
+                Create your own shelter or join an existing shelter community.
+            </p>
+            <div class="d-flex gap-2">
+                <a asp-controller="Shelter" asp-action="Create" class="btn btn-register-shelter">
+                    Register a Shelter
+                </a>
+    
+                <a asp-controller="Shelter" asp-action="Join" class="btn btn-join-shelter">
+                    Join a Shelter
+                </a>
+            </div>
         </div>
     </div>
 </div>
