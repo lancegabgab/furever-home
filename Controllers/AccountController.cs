@@ -13,6 +13,11 @@ namespace FureverHome.Controllers
             return View();
         }
 
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
         [AllowAnonymous]
         public IActionResult Register()
         {
