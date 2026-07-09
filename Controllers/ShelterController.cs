@@ -77,11 +77,11 @@ namespace FureverHome.Controllers
             }
         }
             
-        [HttpPost]
-        public IActionResult Join()
-        {
-            return RedirectToAction("Index", "Shelter");
-        }
+        // [HttpPost]
+        // public IActionResult Join()
+        // {
+        //     return RedirectToAction("Index", "Shelter");
+        // }
 
         // GET: ShelterController/Delete/5
         public ActionResult Delete(int id)
