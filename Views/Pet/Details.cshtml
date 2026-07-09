@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Pet Details";
+}
+
+<div class="container py-5">
+
+    <div class="row g-5">
+
+        <div class="col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="bg-light d-flex justify-content-center align-items-center"
+                     style="height:500px;">
+                    <span class="text-muted fs-5">Pet Image</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+
+            <h1 class="fw-bold mb-3">Pet Name</h1>
+
+            <span class="badge bg-success me-2">Pet Status</span>
+            <span class="badge bg-secondary">Pet Type</span>
+
+            <hr>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th width="35%">Gender</th>
+                        <td>Gender val</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>Age val</td>
+                    </tr>
+                    <tr>
+                        <th>Breed</th>
+                        <td>Breed val</td>
+                    </tr>
+                    <tr>
+                        <th>Shelter</th>
+                        <td>Shelter Name</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mt-4">
+                <h4>About Name</h4>
+
+                <p class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+            <div class="mt-4">
+                <a class="btn btn-success btn-lg me-2">
+                    Adopt Me
+                </a>
+
+                <a asp-controller="Pet" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                    Back to Pets
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
