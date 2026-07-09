@@ -36,6 +36,11 @@ namespace FureverHome.Controllers
             return View();
         }
 
+        public IActionResult Join()
+        {
+            return View();
+        }
+
         // POST: ShelterController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,6 +75,12 @@ namespace FureverHome.Controllers
             {
                 return View();
             }
+        }
+            
+        [HttpPost]
+        public IActionResult Join()
+        {
+            return RedirectToAction("Index", "Shelter");
         }
 
         // GET: ShelterController/Delete/5
