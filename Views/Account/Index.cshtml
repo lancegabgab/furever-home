@@ -2,26 +2,26 @@
     ViewData["Title"] = "My Account";
 }
 <style>
-    .btn-register-shelter {
+    .btn-primary-theme {
         background-color: #2f3e34;
         color: #ffffff;
         border: 1px solid #2f3e34;
         transition: all 0.2s ease;
         font-weight: 500;
     }
-    .btn-register-shelter:hover {
+    .btn-primary-theme:hover {
         background-color: #1f2d24;
         border-color: #1f2d24;
         color: #ffffff;
     }
-    .btn-join-shelter {
+    .btn-outline-theme {
         background-color: transparent;
         color: #2f3e34;
         border: 1px solid #2f3e34;
         transition: all 0.2s ease;
         font-weight: 500;
     } 
-    .btn-join-shelter:hover {
+    .btn-outline-theme:hover {
         background-color: #2f3e34;
         color: #ffffff;
     }
@@ -58,17 +58,32 @@
             </div>
         </div>
         <div class="mt-4">
+            <h5>Shelter Management</h5>
             <p class="text-muted">
                 Create your own shelter or join an existing shelter community.
             </p>
             <div class="d-flex gap-2">
-                <a asp-controller="Shelter" asp-action="Create" class="btn btn-register-shelter">
+                <a asp-controller="Shelter" asp-action="Create" class="btn btn-primary-theme">
                     Register a Shelter
                 </a>
     
-                <a asp-controller="Shelter" asp-action="Join" class="btn btn-join-shelter">
+                <a asp-controller="Shelter" asp-action="Join" class="btn btn-outline-theme">
                     Join a Shelter
                 </a>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h5>Account Settings</h5>
+            <div class="d-flex gap-2">
+                <a asp-controller="Account" asp-action="ChangePassword" class="btn btn-primary-theme">
+                    Change Password
+                </a>
+
+                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-outline-theme">
+                        Logout
+                    </button>
+                </form>
             </div>
         </div>
     </div>
