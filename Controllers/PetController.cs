@@ -6,6 +6,7 @@ using FureverHome.Models;
 
 namespace FureverHome.Controllers
 {
+    [Authorize]
     public class PetController : Controller
     {
         private readonly PetService _petService;
