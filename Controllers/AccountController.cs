@@ -18,6 +18,11 @@ namespace FureverHome.Controllers
             return View();
         }
 
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
         [AllowAnonymous]
         public IActionResult Register()
         {
