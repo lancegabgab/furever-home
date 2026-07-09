@@ -6,6 +6,7 @@ using FureverHome.Models;
 
 namespace FureverHome.Controllers
 {
+    [Authorize]
     public class ShelterController : Controller
     {
         private readonly ShelterService _shelterService;
