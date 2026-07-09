@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Join Shelter";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-5">
+
+                    <h1 class="fw-bold mb-3">Join a Shelter</h1>
+                    <p class="text-muted mb-4">
+                        Submit a request to join an existing shelter. Once approved by the shelter administrator, you'll be able to manage pets and adoption requests.
+                    </p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Select Shelter <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select">
+                                <option selected disabled>Choose a shelter</option>
+                                <option>PAWS Philippines</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Position</label>
+                            <select class="form-select">
+                                <option selected disabled>
+                                    Select your role
+                                </option>
+                                <option>Shelter Staff</option>
+                                <option>Volunteer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Message to the Shelter
+                            </label>
+
+                            <textarea class="form-control" rows="5" placeholder="Briefly introduce yourself and explain why you'd like to join this shelter."></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-controller="Shelter" asp-action="Index" class="btn btn-outline-secondary">
+                                Back
+                            </a>
+
+                            <button type="submit" class="btn btn-success"> Send Request </button>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
