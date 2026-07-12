@@ -1,7 +1,9 @@
+@model FureverHome.Models.Pet
 @{
     ViewData["Title"] = "Pet Details";
 }
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <div class="container py-5">
 
     <div class="row g-5">
@@ -17,10 +19,10 @@
 
         <div class="col-lg-6">
 
-            <h1 class="fw-bold mb-3">Pet Name</h1>
+            <h1 class="fw-bold mb-3">@Model.Name</h1>
 
-            <span class="badge bg-success me-2">Pet Status</span>
-            <span class="badge bg-secondary">Pet Type</span>
+            <span class="badge bg-success me-2">@Model.Status</span>
+            <span class="badge bg-secondary">@Model.PetType</span>
 
             <hr>
 
@@ -28,25 +30,27 @@
                 <tbody>
                     <tr>
                         <th width="35%">Gender</th>
-                        <td>Gender val</td>
+                        <td>
+                            <i class="bi @(Model.Gender == FureverHome.Enums.PetGender.Male ? "bi-gender-male" : "bi-gender-female")"></i> @Model.Gender
+                        </td>
                     </tr>
                     <tr>
                         <th>Age</th>
-                        <td>Age val</td>
+                        <td>Age</td>
                     </tr>
                     <tr>
                         <th>Breed</th>
-                        <td>Breed val</td>
+                        <td>Breed</td>
                     </tr>
                     <tr>
                         <th>Shelter</th>
-                        <td>Shelter Name</td>
+                        <td>@Model.Shelter.Name</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="mt-4">
-                <h4>About Name</h4>
+                <h4>About @Model.Name </h4>
 
                 <p class="text-muted">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
