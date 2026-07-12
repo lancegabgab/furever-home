@@ -1,5 +1,6 @@
 ﻿using FureverHome.Data;
 using FureverHome.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FureverHome.Services
 {
@@ -20,7 +21,9 @@ namespace FureverHome.Services
 
         public Pet? GetById(int id)
         {
-            var pet = _context.Pets.Find(id);
+            var pet = _context.Pets
+                .Include(p => p.Shelter)
+                .FirstOrDefault(p => p.Id == id);
             return pet;
         }
     }
