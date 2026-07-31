@@ -13,11 +13,11 @@ namespace FureverHome.ViewModels
         public required string LastName { get; set; }
 
         [Required(ErrorMessage = "Please enter your email address.")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public required string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter your contact number.")]
-        [Phone]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
         public required string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Please enter a password.")]
