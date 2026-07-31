@@ -4,23 +4,23 @@ namespace FureverHome.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter your first name.")]
         public required string FirstName { get; set; }
 
         public string? MiddleName { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Please enter your last name.")]
         public required string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your email address.")]
         [EmailAddress]
         public required string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your contact number.")]
         [Phone]
         public required string PhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a password.")]
         [DataType(DataType.Password)]
         public required string Password { get; set; }
     }
