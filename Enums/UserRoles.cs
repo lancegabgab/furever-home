@@ -2,7 +2,7 @@
 
 namespace FureverHome.Enums
 {
-    public enum UserRoles
+    public enum UserRole
     {
         [Display(Name = "Adopter")]
         Adopter = 1,
