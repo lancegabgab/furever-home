@@ -33,29 +33,6 @@
         .footer-link {
            color: #2f3e34;
         } 
-        .btn-login {
-            border: 1px solid #2f3e34;
-            color: #2f3e34;
-            background: transparent;
-            transition: all 0.2s ease;
-            font-weight: 500;
-        }
-        .btn-login:hover {
-            background-color: #2f3e34;
-            color: #ffffff;
-        }
-        .btn-signup {
-            background-color: #2f3e34;
-            color: #ffffff;
-            border: 1px solid #2f3e34;
-            transition: all 0.2s ease;
-            font-weight: 500;
-        }
-        .btn-signup:hover {
-            background-color: #1f2d24;
-            border-color: #1f2d24;
-            color: #ffffff;
-        }
     </style>
 </head>
 <body>
@@ -90,18 +67,16 @@
                     <div class="ms-auto d-flex flex-column flex-md-row">
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
-                            <a class="btn nav-link me-2 p-0" asp-controller="Account" asp-action="Index">
+                            <a class="btn btn-brand-outline me-2" asp-controller="Account" asp-action="Index">
                                 <i class="bi bi-person-fill me-1"></i>Profile
                             </a>
 
-                            <a class="btn nav-link p-0" id="btnLogout">
-                                Logout
-                            </a>
+                            <a class="btn btn-brand" id="btnLogout"> Logout</a>
                         }
                         else
                         {
-                            <a class="btn btn-login me-2" asp-controller="Account" asp-action="Login">Log in</a>
-                            <a class="btn btn-signup" asp-controller="Account" asp-action="Register">Sign up</a>
+                            <a class="btn btn-brand-outline me-2" asp-controller="Account" asp-action="Login">Log in</a>
+                            <a class="btn btn-brand" asp-controller="Account" asp-action="Register">Sign up</a>
                         }
                     </div>
                 </div>
