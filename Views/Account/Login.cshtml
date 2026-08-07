@@ -9,7 +9,7 @@
 
         <h3 class="text-center mb-4">Login</h3>
 
-        <form asp-action="Login" method="post">
+        <form id="loginForm" asp-action="Login" method="post">
 
             <div class="mb-3">
                 <label class="form-label">Email</label>
@@ -38,3 +38,50 @@
 
     </div>
 </div>
+@section Scripts {
+    <script>
+        $("#loginForm").submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("action"),
+                type: "POST",
+                data: $(this).serialize(),
+                beforeSend: function () {
+                    $("#btnLogin").prop("disabled", true).text("Logging in...");
+                },
+                success: function (res) {
+                    if (res.success) {
+                        Swal.fire({
+                            icon: "success",
+                            title: res.message,
+                            timer: 1500,
+                            showConfirmButton: false
+                        }).then(() => {
+                            window.location.href = "/Home/Index";
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Login Failed",
+                            text: res.message
+                        });
+                    }
+                },
+                error: function (xhr) {
+                    let message = "Something went wrong.";
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        message = xhr.responseJSON.message;
+                    }
+                    Swal.fire({
+                        icon: "error",
+                        title: "Login Failed",
+                        text: message
+                    });
+                },
+                complete: function () {
+                    $("#btnLogin").prop("disabled", false).text("Login");
+                }
+            });
+        });
+    </script>
+}

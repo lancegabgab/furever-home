@@ -8,10 +8,12 @@ namespace FureverHome.Services
     public class AccountService
     {
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public AccountService(UserManager<User> userManager)
+        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async Task<Response> RegisterAsync(RegisterViewModel model)
@@ -43,6 +45,37 @@ namespace FureverHome.Services
                     Environment.NewLine,
                     result.Errors.Select(e => e.Description));
             }
+
+            return response;
+        }
+        public async Task<Response> LoginAsync(LoginViewModel model)
+        {
+            Response response = new();
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+
+            if (user == null)
+            {
+                response.Success = false;
+                response.Message = "Invalid email or password.";
+                return response;
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(
+                user,
+                model.Password,
+                isPersistent: false,
+                lockoutOnFailure: false);
+
+            if (!result.Succeeded)
+            {
+                response.Success = false;
+                response.Message = "Invalid email or password.";
+                return response;
+            }
+
+            response.Success = true;
+            response.Message = "Login successful!";
 
             return response;
         }

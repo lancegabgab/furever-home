@@ -51,6 +51,22 @@ namespace FureverHome.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new Response
+                {
+                    Success = false,
+                    Message = "Please fill in all required fields."
+                });
+            }
+            Response response = await _accountService.LoginAsync(model);
+            return Json(response);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
