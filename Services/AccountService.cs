@@ -48,6 +48,7 @@ namespace FureverHome.Services
 
             return response;
         }
+
         public async Task<Response> LoginAsync(LoginViewModel model)
         {
             Response response = new();
@@ -78,6 +79,17 @@ namespace FureverHome.Services
             response.Message = "Login successful!";
 
             return response;
+        }
+
+        public async Task<Response> LogoutAsync()
+        {
+            await _signInManager.SignOutAsync();
+
+            return new Response
+            {
+                Success = true,
+                Message = "Logout successful."
+            };
         }
     }
 }

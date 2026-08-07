@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="/images/FureverHomeIcon.png" />
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/furever_home.styles.css" asp-append-version="true" />
     <style>
@@ -87,8 +88,21 @@
                         </li>
                     </ul>
                     <div class="ms-auto d-flex flex-column flex-md-row">
-                        <a class="btn btn-login me-2" asp-controller="Account" asp-action="Login">Log in</a>
-                        <a class="btn btn-signup" asp-controller="Account" asp-action="Register">Sign up</a>
+                        @if (User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <a class="btn nav-link me-2 p-0" asp-controller="Account" asp-action="Index">
+                                <i class="bi bi-person-fill me-1"></i>Profile
+                            </a>
+
+                            <a class="btn nav-link p-0" id="btnLogout">
+                                Logout
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-login me-2" asp-controller="Account" asp-action="Login">Log in</a>
+                            <a class="btn btn-signup" asp-controller="Account" asp-action="Register">Sign up</a>
+                        }
                     </div>
                 </div>
             </div>

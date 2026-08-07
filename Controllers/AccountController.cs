@@ -67,6 +67,13 @@ namespace FureverHome.Controllers
             return Json(response);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            var response = await _accountService.LogoutAsync();
+            return Json(response);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
