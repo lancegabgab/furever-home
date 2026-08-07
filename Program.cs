@@ -1,9 +1,11 @@
 using DotNetEnv;
 using FureverHome.Data;
+using FureverHome.Models;
 using FureverHome.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +20,10 @@ builder.Services.AddDbContext<FureverHomeContext>(options =>
         // builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Account/Login";
-        options.LogoutPath = "/Account/Logout";
-    });
+builder.Services
+    .AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<FureverHomeContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -32,6 +32,7 @@ builder.Services.AddAuthorization(options =>
         .Build();
 });
 
+builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<ShelterService>();
 builder.Services.AddScoped<PetService>();
 

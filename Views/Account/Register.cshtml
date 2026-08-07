@@ -9,7 +9,7 @@
         
         <h3 class="text-center mb-4">Create an account</h3>
 
-        <form asp-action="Register" method="post">
+        <form id="registerForm" asp-action="Register" method="post">
 
             <div class="mb-3">
                 <label class="form-label">First Name <span class="text-danger">*</span></label>
@@ -46,7 +46,7 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn btn-success w-100">
+            <button id="btnRegister" type="submit" class="btn btn-success w-100">
                 Sign up
             </button>
 
@@ -61,3 +61,63 @@
 
     </div>
 </div>
+@section Scripts {
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+
+<script>
+    $(function () {
+
+        $("#registerForm").submit(function (e) {
+            e.preventDefault();
+
+            if (!$(this).valid()) {
+                return;
+            }
+
+            $.ajax({
+                url: $(this).attr("action"),
+                type: "POST",
+                data: $(this).serialize(),
+                beforeSend: function () {
+                    $("#btnRegister").prop("disabled", true).text("Registering...");
+                },
+                success: function (res) {
+                    if (res.success) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registration Successful!",
+                            text: res.message,
+                            confirmButtonText: "Login"
+                        }).then(() => {
+                            window.location.href = "/Account/Login";
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Registration Failed",
+                            text: res.message
+                        });
+                    }
+                },
+                error: function (xhr) {
+                    let message = "Something went wrong.";
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        message = xhr.responseJSON.message;
+                    }
+                    Swal.fire({
+                        icon: "error",
+                        title: "Registration Failed",
+                        text: message
+                    });
+                },
+                complete: function () {
+                    $("#btnRegister").prop("disabled", false).text("Sign up");
+                }
+            });
+        });
+
+    });
+</script>
+}
