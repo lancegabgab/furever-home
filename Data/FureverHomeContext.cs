@@ -1,12 +1,13 @@
 ﻿using FureverHome.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FureverHome.Data
 {
-    public class FureverHomeContext : DbContext
+    public class FureverHomeContext : IdentityDbContext<User>
     {
         public FureverHomeContext(DbContextOptions<FureverHomeContext> options)
-        : base(options)
+            : base(options)
         {
         }
 
