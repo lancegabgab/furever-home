@@ -1,0 +1,44 @@
+﻿.furever-swal-popup {
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.furever-swal-confirm,
+.furever-swal-cancel {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    padding: 10px 24px !important;
+    margin: 0 7px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+}
+
+.furever-swal-confirm {
+    background-color: #2f3e34 !important;
+    color: #fff !important;
+}
+
+    .furever-swal-confirm:hover {
+        background-color: #243129 !important;
+    }
+
+.furever-swal-cancel {
+    background-color: #e9ecef !important;
+    color: #343a40 !important;
+}
+
+    .furever-swal-cancel:hover {
+        background-color: #dee2e6 !important;
+    }
+
+    .furever-swal-confirm:focus,
+    .furever-swal-confirm:active,
+    .furever-swal-cancel:focus,
+    .furever-swal-cancel:active {
+        border: 0 !important;
+        outline: 0 !important;
+        box-shadow: none !important;
+    }

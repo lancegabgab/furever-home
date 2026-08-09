@@ -1,8 +1,20 @@
 ﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
+const customizedSwal = (options = {}) => {
+    return Swal.fire({
+        ...options,
+        customClass: {
+            popup: "furever-swal-popup",
+            confirmButton: "furever-swal-confirm",
+            cancelButton: "furever-swal-cancel"
+        },
+        buttonsStyling: false
+    });
+};
+
 $("#btnLogout").click(function () {
-    Swal.fire({
+    customizedSwal({
         title: "Are you sure?",
         text: "You will be logged out of your account.",
         icon: "warning",
@@ -16,7 +28,7 @@ $("#btnLogout").click(function () {
                 type: "POST",
                 success: function (res) {
                     if (res.success) {
-                        Swal.fire({
+                        customizedSwal({
                             icon: "success",
                             title: res.message,
                             timer: 1500,
@@ -27,7 +39,7 @@ $("#btnLogout").click(function () {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                    customizedSwal({
                         icon: "error",
                         title: "Error",
                         text: "Unable to logout."
