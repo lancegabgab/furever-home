@@ -85,7 +85,7 @@
                 },
                 success: function (res) {
                     if (res.success) {
-                        Swal.fire({
+                        customizedSwal({
                             icon: "success",
                             title: "Registration Successful!",
                             text: res.message,
@@ -94,11 +94,11 @@
                             window.location.href = "/Account/Login";
                         });
                     } else {
-                        Swal.fire({
+                       customizedSwal({
                             icon: "error",
                             title: "Registration Failed",
                             text: res.message
-                        });
+                       });
                     }
                 },
                 error: function (xhr) {
@@ -106,7 +106,7 @@
                     if (xhr.responseJSON && xhr.responseJSON.message) {
                         message = xhr.responseJSON.message;
                     }
-                    Swal.fire({
+                    customizedSwal({
                         icon: "error",
                         title: "Registration Failed",
                         text: message
