@@ -22,9 +22,10 @@ namespace FureverHome.Controllers
             return View(account);
         }
 
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit()
         {
-            return View();
+            var account = await _accountService.GetAccountAsync();
+            return View(account);
         }
 
         public IActionResult ChangePassword()
