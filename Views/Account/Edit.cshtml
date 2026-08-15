@@ -3,31 +3,7 @@
 @{
     ViewData["Title"] = "Edit Profile";
 }
-<style>
-    .btn-save {
-        background-color: #2f3e34;
-        color: #ffffff;
-        border: 1px solid #2f3e34;
-        transition: all 0.2s ease;
-        font-weight: 500;
-    }
-    .btn-save:hover {
-        background-color: #1f2d24;
-        border-color: #1f2d24;
-        color: #ffffff;
-    }
-    .btn-cancel {
-        background-color: transparent;
-        color: #2f3e34;
-        border: 1px solid #2f3e34;
-        transition: all 0.2s ease;
-        font-weight: 500;
-    } 
-    .btn-cancel:hover {
-        background-color: #2f3e34;
-        color: #ffffff;
-    }
-</style>
+
 <div class="container">
     <div class="card shadow-sm p-4">
         <div class="d-flex justify-content-between align-items-center">
@@ -72,11 +48,11 @@
             </div>
 
             <div class="mt-4">
-                <button type="submit" class="btn btn-save">
+                <button type="submit" class="btn btn-brand">
                     Save Changes
                 </button>
             
-                <a asp-controller="Account" asp-action="Index" class="btn btn-cancel">
+                <a asp-controller="Account" asp-action="Index" class="btn btn-outline-secondary">
                     Cancel
                 </a>
             </div>
