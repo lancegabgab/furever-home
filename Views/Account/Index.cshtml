@@ -3,31 +3,6 @@
 @{
     ViewData["Title"] = "My Account";
 }
-<style>
-    .btn-primary-theme {
-        background-color: #2f3e34;
-        color: #ffffff;
-        border: 1px solid #2f3e34;
-        transition: all 0.2s ease;
-        font-weight: 500;
-    }
-    .btn-primary-theme:hover {
-        background-color: #1f2d24;
-        border-color: #1f2d24;
-        color: #ffffff;
-    }
-    .btn-outline-theme {
-        background-color: transparent;
-        color: #2f3e34;
-        border: 1px solid #2f3e34;
-        transition: all 0.2s ease;
-        font-weight: 500;
-    } 
-    .btn-outline-theme:hover {
-        background-color: #2f3e34;
-        color: #ffffff;
-    }
-</style>
 <div class="container">
     <div class="card shadow-sm p-4">
         <div class="d-flex justify-content-between align-items-center">
@@ -73,11 +48,11 @@
                 Create your own shelter or join an existing shelter community.
             </p>
             <div class="d-flex gap-2">
-                <a asp-controller="Shelter" asp-action="Create" class="btn btn-primary-theme">
+                <a asp-controller="Shelter" asp-action="Create" class="btn btn-brand">
                     Register a Shelter
                 </a>
     
-                <a asp-controller="Shelter" asp-action="Join" class="btn btn-outline-theme">
+                <a asp-controller="Shelter" asp-action="Join" class="btn btn-brand-outline">
                     Join a Shelter
                 </a>
             </div>
@@ -85,15 +60,9 @@
         <div class="mt-4">
             <h5>Account Settings</h5>
             <div class="d-flex gap-2">
-                <a asp-controller="Account" asp-action="ChangePassword" class="btn btn-primary-theme">
+                <a asp-controller="Account" asp-action="ChangePassword" class="btn btn-brand">
                     Change Password
                 </a>
-
-                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                    <button type="submit" class="btn btn-outline-theme">
-                        Logout
-                    </button>
-                </form>
             </div>
         </div>
     </div>
