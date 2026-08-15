@@ -9,11 +9,13 @@ namespace FureverHome.Services
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountService(UserManager<User> userManager, SignInManager<User> signInManager, IHttpContextAccessor httpContextAccessor)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Response> RegisterAsync(RegisterViewModel model)
@@ -89,6 +91,24 @@ namespace FureverHome.Services
             {
                 Success = true,
                 Message = "Logout successful."
+            };
+        }
+
+        public async Task<AccountViewModel?> GetAccountAsync()
+        {
+            var user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext?.User);
+
+            if (user == null)
+                return null;
+            
+            return new AccountViewModel
+            {
+                FirstName = user.FirstName,
+                MiddleName = user.MiddleName,
+                LastName = user.LastName,
+                Email = user.Email,
+                ContactNumber = user.PhoneNumber,
+                Role = user.Role.ToString()
             };
         }
     }

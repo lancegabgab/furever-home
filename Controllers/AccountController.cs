@@ -16,9 +16,10 @@ namespace FureverHome.Controllers
         {
             _accountService = accountService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var account = await _accountService.GetAccountAsync();
+            return View(account);
         }
 
         public IActionResult Edit()
