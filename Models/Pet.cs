@@ -6,7 +6,7 @@ namespace FureverHome.Models
 {
     public class Pet
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -18,7 +18,7 @@ namespace FureverHome.Models
         [Required]
         public PetGender Gender { get; set; }
 
-        public int ShelterId { get; set; }
+        public Guid ShelterId { get; set; }
 
         [ForeignKey("ShelterId")]
         public Shelter Shelter { get; set; } = null!;
