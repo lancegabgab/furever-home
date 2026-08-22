@@ -56,3 +56,16 @@ body {
     border-color: #1f2d24;
     color: #ffffff;
 }
+
+.btn-brand-light {
+    background-color: #ACD1AF;
+    color: #2f3e34;
+    border: 1px solid #2f3e34;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+    .btn-brand-light:hover {
+        background-color: #2f3e34;
+        color: #fff;
+    }
