@@ -1,5 +1,4 @@
-﻿@model IEnumerable<FureverHome.Models.Pet>
-@{
+﻿@{
     ViewData["Title"] = "Pets";
 }
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -12,7 +11,7 @@
         min-height: 80vh;
     }
 </style>
-<div class="container-fluid">
+<div class="container-fluid p-0">
     <div class="text-center mb-5">
         <div id="pet-banner-section" class="d-flex flex-column justify-content-center align-items-center text-white">
             <h1 class="display-3 fw-bold">Adopt a Pet</h1>
@@ -24,9 +23,7 @@
                 <div class="row g-2 align-items-end">
 
                     <div class="col-md-3">
-                        <input type="text" name="search" class="form-control" placeholder="Search pets..."
-                               @* value="@Context.Request.Query["search"]"  *@
-                    />
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search pets..."   />
                     </div>
 
                     <div class="col-md-3">
@@ -34,8 +31,6 @@
                             <option value="" selected>All Pet Type</option>
                             <option value="1">Dog</option>
                             <option value="2">Cat</option>
-                            @* <option value="Cat" selected="@(Context.Request.Query["petType"] == "Cat")">Cat</option>
-                        <option value="Dog" selected="@(Context.Request.Query["petType"] == "Dog")">Dog</option> *@
 
                         </select>
                     </div>
@@ -49,7 +44,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <button type="submit" class="btn w-100" style="background-color:#4CAF50;">
+                        <button class="btn w-100 btn-brand-light">
                             Search
                         </button>
                     </div>
@@ -58,33 +53,8 @@
             </form>
         </div>
     </div>
-    <div class="container my-5"> 
-        <div class="row g-4"> 
-            @if (Model != null && Model.Any()) {
-                @foreach (var pet in Model) {
-                    <div class="col-md-4"> 
-                        <div class="card h-100 shadow-sm"> 
-                            <div class="d-flex align-items-center justify-content-center bg-secondary text-white" style="height:250px;">
-                                <span>No Image Available</span> 
-                            </div> 
-                            <div class="card-body"> 
-                                <h5 class="card-title">@pet.Name</h5>
-                                <span class="text-black">
-                                    <i class="bi @(pet.Gender == FureverHome.Enums.PetGender.Male ? "bi-gender-male" : "bi-gender-female")"></i> @pet.Gender
-                                </span>
-                            </div>
-                            <div class="card-footer bg-white border-0">
-                                <a asp-controller="Pet" asp-action="Details" asp-route-id="@pet.Id" class="btn btn-success w-100"> View Details </a> 
-                            </div> 
-                        </div> 
-                    </div>
-                }
-            } else
-            {
-                <div class="col-12 text-center"> 
-                    <h4>No pets found.</h4> 
-                </div>
-            }
+    <div class="container my-5" id="petList">
+        <div class="row g-4" id="petContainer">
         </div>
     </div>
 </div>

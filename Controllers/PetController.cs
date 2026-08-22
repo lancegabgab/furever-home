@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FureverHome.Services;
 using FureverHome.Models;
+using FureverHome.Enums;
 
 namespace FureverHome.Controllers
 {
@@ -19,24 +20,28 @@ namespace FureverHome.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var pets = _petService.GetAll() ?? new List<Pet>();
-            return View(pets);
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetAll(string? search = null, PetType? petType = null, PetGender? petGender = null)
+        {
+            var pets = _petService.GetAll(search, petType, petGender) ?? new List<Pet>();
+            return Json(pets);
         }
 
         [AllowAnonymous]
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
             var pet = _petService.GetById(id);
             return View(pet);
         }
 
-        // GET: PetController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PetController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -51,16 +56,14 @@ namespace FureverHome.Controllers
             }
         }
 
-        // GET: PetController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
             return View();
         }
 
-        // POST: PetController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Guid id, IFormCollection collection)
         {
             try
             {
@@ -72,16 +75,14 @@ namespace FureverHome.Controllers
             }
         }
 
-        // GET: PetController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
             return View();
         }
 
-        // POST: PetController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Guid id, IFormCollection collection)
         {
             try
             {
