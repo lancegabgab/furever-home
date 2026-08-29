@@ -13,5 +13,20 @@ namespace FureverHome.Models
         public string Name { get; set; } = null!;
 
         public string? ImageUrl { get; set; }
-    }
+
+		[Required]
+		[MaxLength(20)]
+		public string ContactNumber { get; set; } = null!;
+
+		[Required]
+		[EmailAddress]
+		[MaxLength(255)]
+		public string EmailAddress { get; set; } = null!;
+
+		[Required]
+		[MaxLength(255)]
+		public string Address { get; set; } = null!;
+
+		public string? About { get; set; }
+	}
 }
