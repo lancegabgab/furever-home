@@ -23,6 +23,6 @@ namespace FureverHome.ViewModels
 		public required string Address { get; set; }
 
 		[MaxLength(2000)]
-		public required string About { get; set; }
+		public string? About { get; set; }
 	}
 }
