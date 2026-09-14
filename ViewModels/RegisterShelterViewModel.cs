@@ -7,7 +7,7 @@ namespace FureverHome.ViewModels
         [Required(ErrorMessage = "Please enter your shelter name.")]
         public required string Name { get; set; }
 
-        public string? ImageUrl { get; set; }
+		public IFormFile? ImageUrl { get; set; }
 
 		[Required(ErrorMessage = "Please enter your contact number.")]
 		[MaxLength(20)]
